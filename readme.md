@@ -18,7 +18,10 @@ The following are all test results for 1.8.8.
 ### 5000bot/s attack
 - 1Core 2G disaster(server crash)
 - 4Core 8G Last ten seconds of the attack lagged (total 30s)
+### 2000connect/s motd attack
+- 5mbps smooth
 
+Note:This is only my impression of the data
 ## Acknowledgements:
 - Thanks to [JetBrains](https://www.jetbrains.com/) for the [IntelliJ IDEA](https://www.jetbrains.com/idea/download/) Community Edition and kotlin language support.
 - Thanks to [DeepL](https://www.deepl.com/) for translation support.
