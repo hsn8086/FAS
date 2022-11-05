@@ -54,10 +54,10 @@ class JoinEvent : Listener {
     }
 
     private fun checkIfTheNameIsIllegal(player: Player): Boolean {
-        var rtBool = true
+        var rtBool = false
 
         if (!java.util.regex.Pattern.matches("^[a-zA-Z0-9_]{3,16}$", player.name)) {
-            rtBool = false
+            rtBool = true
         }
         return rtBool
     }
