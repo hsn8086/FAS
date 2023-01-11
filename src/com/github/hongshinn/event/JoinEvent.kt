@@ -15,6 +15,7 @@ import java.util.*
 class JoinEvent : Listener {
     @EventHandler
     fun onPlayerJoin(e: PlayerJoinEvent) {
+
         val player = e.player
         val ipAddress = e.player.address.toString().split(":".toRegex()).dropLastWhile { it.isEmpty() }
             .toTypedArray()[0].replace("/", "")
@@ -37,9 +38,14 @@ class JoinEvent : Listener {
         }
 
         try {
-            Global.connectCountLock.lock()
 
-            if (!isNameIllegal && !isToManyConnect) {
+
+            if (Global.connectCount < 30) {
+                Global.canLogin[player.name] = true
+            } else {
+                Global.canLogin.putIfAbsent(player.name, false)
+            }
+            if (!isNameIllegal && !isToManyConnect && !Global.canLogin[player.name]!!) {
                 Global.playerKickCount[player.name] = Global.computationalVerificationTimeout
                 //ÑéÖ¤Âë
                 val resultString = getVerificationString(player)
@@ -49,7 +55,7 @@ class JoinEvent : Listener {
         } catch (ex: Exception) {
             ex.printStackTrace()
         } finally {
-            Global.connectCountLock.unlock()
+
         }
     }
 
@@ -66,7 +72,7 @@ class JoinEvent : Listener {
         var rtBool = false
 
         try {
-            Global.connectCountLock.lock()
+
         } catch (ex: Exception) {
             ex.printStackTrace()
         }

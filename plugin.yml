@@ -1,5 +1,6 @@
 name: FAS
 main: com.github.hongshinn.Main
-version: 0.3.3
+version: 0.4.0-SNAPSHOT
 author: hsn
 depend: [ Kotlin ]
+load: STARTUP

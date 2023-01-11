@@ -1,5 +1,6 @@
 package com.github.hongshinn.data
 
+import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.locks.Lock
 import java.util.concurrent.locks.ReentrantLock
 
@@ -8,33 +9,32 @@ import java.util.concurrent.locks.ReentrantLock
  */
 object Global {
 
-    var list = Array(8192) { Array(2) { arrayOfNulls<String>(128) } }
-    var ipConnectCount = HashMap<String, Int>()
-    var tempPlayerList = HashMap<String, Boolean>()
+    var ipConnectCount = ConcurrentHashMap<String, Int>()
+    var tempPlayerList = ConcurrentHashMap<String, Boolean>()
 
     @JvmField
-    var pingCount = HashMap<String, Int>()
+    var pingCount = ConcurrentHashMap<String, Int>()
 
     @JvmField
-    var playerKickCount = HashMap<String, Int>()
+    var playerKickCount = ConcurrentHashMap<String, Int>()
 
     @JvmField
-    var spamCount = HashMap<String, Int>()
+    var spamCount = ConcurrentHashMap<String, Int>()
 
     @JvmField
-    var loginTimeOutCount = HashMap<String, Int>()
+    var loginTimeOutCount = ConcurrentHashMap<String, Int>()
 
     @JvmField
-    var captcha = HashMap<String, Int>()
+    var captcha = ConcurrentHashMap<String, Int>()
 
     @JvmField
-    var captchaString = HashMap<String, String>()
+    var captchaString = ConcurrentHashMap<String, String>()
 
     @JvmField
-    var canLogin = HashMap<String, Boolean>()
+    var canLogin = ConcurrentHashMap<String, Boolean>()
 
     @JvmField
-    var canLoginPlayer = HashMap<String, Boolean>()
+    var canLoginPlayer = ConcurrentHashMap<String, Boolean>()
 
     @JvmField
     var maximumConnectionsPerIp: Int? = null
@@ -115,11 +115,10 @@ object Global {
     @JvmField
     var connectCountLock: Lock = ReentrantLock()
 
-    @JvmField
-    var activityLock: Lock = ReentrantLock()
+
 
     @JvmField
-    var activity = HashMap<String, Int>()
+    var activity = ConcurrentHashMap<String, Int>()
 
     @JvmField
     var whitelistActivityThreshold = 0
@@ -131,5 +130,5 @@ object Global {
     var nameRegex: String? = null
 
     @JvmField
-    var whitelist = HashMap<String, Int>()
+    var whitelist = ConcurrentHashMap<String, Int>()
 }
