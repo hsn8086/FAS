@@ -1,6 +1,6 @@
-package com.github.hongshinn.event
+package com.github.hsn8086.event
 
-import com.github.hongshinn.data.Global
+import com.github.hsn8086.data.Global
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener

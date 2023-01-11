@@ -1,6 +1,6 @@
-package com.github.hongshinn.event
+package com.github.hsn8086.event
 
-import com.github.hongshinn.data.Global
+import com.github.hsn8086.data.Global
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
 import org.bukkit.event.EventHandler
@@ -40,7 +40,7 @@ class JoinEvent : Listener {
         try {
 
 
-            if (Global.connectCount < 30) {
+            if (Global.connectCount < -5) {
                 Global.canLogin[player.name] = true
             } else {
                 Global.canLogin.putIfAbsent(player.name, false)

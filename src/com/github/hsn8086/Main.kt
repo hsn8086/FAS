@@ -1,8 +1,8 @@
-package com.github.hongshinn
+package com.github.hsn8086
 
 
-import com.github.hongshinn.data.Global
-import com.github.hongshinn.event.*
+import com.github.hsn8086.data.Global
+import com.github.hsn8086.event.*
 import org.bukkit.Bukkit
 import org.bukkit.ChatColor
 import org.bukkit.event.Listener
@@ -39,7 +39,7 @@ class Main : JavaPlugin(), Listener {
                 Global.pingCount.clear()
                 try {
                     Global.connectCountLock.lock()
-                    if (Global.connectCount > -5) {
+                    if (Global.connectCount > -10) {
                         Global.connectCount -= (server.onlinePlayers.size + 8) / 4
                     }
                 } finally {

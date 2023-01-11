@@ -1,4 +1,4 @@
-package com.github.hongshinn.data
+package com.github.hsn8086.data
 
 import java.util.concurrent.ConcurrentHashMap
 import java.util.concurrent.locks.Lock
@@ -33,8 +33,7 @@ object Global {
     @JvmField
     var canLogin = ConcurrentHashMap<String, Boolean>()
 
-    @JvmField
-    var canLoginPlayer = ConcurrentHashMap<String, Boolean>()
+
 
     @JvmField
     var maximumConnectionsPerIp: Int? = null
