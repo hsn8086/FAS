@@ -1,0 +1,10 @@
+<component name="ArtifactManager">
+  <artifact type="jar" build-on-make="true" name="FAS:jar">
+    <output-path>$PROJECT_DIR$/server/plugins</output-path>
+    <root id="archive" name="FAS_jar.jar">
+      <element id="module-output" name="FAS" />
+      <element id="file-copy" path="$PROJECT_DIR$/plugin.yml" />
+      <element id="file-copy" path="$PROJECT_DIR$/config.yml" />
+    </root>
+  </artifact>
+</component>
