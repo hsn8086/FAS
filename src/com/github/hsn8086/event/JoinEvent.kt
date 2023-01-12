@@ -89,9 +89,9 @@ class JoinEvent : Listener {
                 Global.tempPlayerList[e.player.name] = true
             }
 
-            Global.ipConnectCount.merge(ipAddress, 1) { a: Int?, b: Int? ->
+            Global.ipConnectCount.merge(ipAddress, 1) { a: Int, b: Int ->
                 Integer.sum(
-                    a!!, b!!
+                    a, b
                 )
             }
         }
