@@ -5,8 +5,6 @@ A anti-attack and anti-spam plugin
 This project was previously written, was used for low version of the bot attack defense, but because our 1.5.2 Minecraft
 server is not open, and then only a few small updates.
 
-Note: This is the previous project, the code level is not high.
-
 ## Feature
 
 Can be used for defense:
@@ -43,4 +41,4 @@ Note:This is only my impression of the data
 - Thanks to [JetBrains](https://www.jetbrains.com/) for the [IntelliJ IDEA](https://www.jetbrains.com/idea/download/)
   Community Edition and kotlin language support.
 - Thanks to [DeepL](https://www.deepl.com/) for translation support.
-- Thanks to [MCStorm](https://mcstorm.io/) for providing free stress tests.(XD)
+- Thanks to [MCStorm](https://mcstorm.ru/) for providing free stress tests.(XD)
