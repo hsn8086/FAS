@@ -12,6 +12,7 @@ import org.bukkit.scheduler.BukkitRunnable
 
 /**
  * @author hsn
+ * @version 4.0
  */
 class Main : JavaPlugin(), Listener {
 

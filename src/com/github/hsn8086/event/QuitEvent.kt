@@ -7,7 +7,7 @@ import org.bukkit.event.player.PlayerQuitEvent
 
 /**
  * @author hsn
- * @version 1.0
+ * @version 4.0
  * @since 2022/5/13 6:20
  */
 class QuitEvent : Listener {

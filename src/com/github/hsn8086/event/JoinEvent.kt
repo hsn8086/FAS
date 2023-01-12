@@ -12,6 +12,7 @@ import java.util.*
 
 /**
  * @author hsn
+ * @version 4.0
  */
 class JoinEvent : Listener {
     @EventHandler

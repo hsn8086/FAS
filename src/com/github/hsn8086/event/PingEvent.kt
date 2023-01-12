@@ -10,7 +10,7 @@ import java.awt.image.BufferedImage
 
 /**
  * @author hsn
- * @version 1.0
+ * @version 4.0
  * @since 2022/05/14 4:52
  */
 class PingEvent : Listener {

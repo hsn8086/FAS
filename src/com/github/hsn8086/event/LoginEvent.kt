@@ -9,7 +9,7 @@ import java.util.concurrent.ConcurrentHashMap
 
 /**
  * @author hsn
- * @version 1.2
+ * @version 4.0
  * @since 2022-5-13
  */
 class LoginEvent : Listener {
