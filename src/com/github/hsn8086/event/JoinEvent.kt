@@ -34,7 +34,7 @@ class JoinEvent : Listener {
         val isNameIllegal = checkIfTheNameIsIllegal(player)
         if (isNameIllegal) {
             e.joinMessage = null
-            player.kickPlayer("§c你的名字不符合\"^[a-zA-Z0-9_]{3,16}\$\"，请更换名字")
+            player.kickPlayer(Global.kickedForIllegalName)
         }
 
         try {

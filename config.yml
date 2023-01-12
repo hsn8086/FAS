@@ -4,6 +4,7 @@ Config.Version: 1
 #---verification---
 Verification.ComputationalVerification.Enabled: true
 Verification.ComputationalVerification.Timeout: 15
+Verification.BanMCStormFreePlanBot.Enabled: true
 
 #---Chat---
 Chat.Enabled: true
@@ -36,6 +37,7 @@ Message.Prefix: '&f[FAS]'
 Message.KickedForTooManyConnections: '{prefix}&4Your IP has reached the maximum number of connections.'
 Message.KickedForCheck: '{prefix}&a\n------------\nAnalyzing your connection\nPlease login again\n------------'
 Message.KickedForUnderAttack: '{underAttack} please wait'
+Message.KickedForIllegalName: '&cYour name does not match \"^[a-zA-Z0-9_]{3,16}\$\", please change your name'
 Message.UnderAttack: '{prefix}&4Server is attacked.'
 Message.ValueValidationChallengeText: '{prefix}&l&aPlease answer the following questions:\n{question}\nto remove the restriction.'
 Message.TalkingTooMuchReminder: '{prefix}&4Excessive speech.'

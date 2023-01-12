@@ -68,6 +68,7 @@ class Main : JavaPlugin(), Listener {
             Global.computationalVerificationEnabled =
                 config.getBoolean("Verification.ComputationalVerification.Enabled")
             Global.computationalVerificationTimeout = config.getInt("Verification.ComputationalVerification.Timeout")
+            Global.banMCStormFreePlanBot = config.getBoolean("Verification.BanMCStormFreePlanBot.Enabled")
             Global.chatEnabled = config.getBoolean("Chat.Enabled")
             Global.speakingInterval = config.getInt("Chat.SpeakingInterval")
             Global.maxMessageLength = config.getInt("Chat.MaxMessageLength")
@@ -84,6 +85,7 @@ class Main : JavaPlugin(), Listener {
                 "{underAttack}",
                 Global.underAttack!!
             )
+            Global.kickedForIllegalName = stringProcess(config.getString("Message.KickedForIllegalName"))
             Global.valueValidationChallengeText =
                 stringProcess(config.getString("Message.ValueValidationChallengeText"))
             Global.talkingTooMuchReminder = stringProcess(config.getString("Message.TalkingTooMuchReminder"))

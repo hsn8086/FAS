@@ -18,6 +18,13 @@ class LoginEvent : Listener {
     fun onPlayerLogin(e: AsyncPlayerPreLoginEvent) {
         //初始化玩家
         Global.whitelist.putIfAbsent(e.name, 0)
+
+        if (Global.banMCStormFreePlanBot && e.name.startsWith("MCSTORM")) {
+            e.disallow(
+                AsyncPlayerPreLoginEvent.Result.KICK_OTHER, Global.kickedForIllegalName
+            )
+        }
+
         //检测玩家是否在白名单内
         if (Global.whitelist[e.name]!! >= 1 && Global.whileListEnabled) {
             //减少一次玩家的豁免权

@@ -9,6 +9,8 @@ import java.util.concurrent.locks.ReentrantLock
  */
 object Global {
 
+
+
     var ipConnectCount = ConcurrentHashMap<String, Int>()
     var tempPlayerList = ConcurrentHashMap<String, Boolean>()
 
@@ -43,7 +45,7 @@ object Global {
 
     @JvmField
     var playerCapPerIp: Int? = null
-
+    var banMCStormFreePlanBot: Boolean=true
     @JvmField
     var valueValidationChallengeText: String? = null
 
@@ -127,7 +129,7 @@ object Global {
 
     @JvmField
     var nameRegex: String? = null
-
+    var kickedForIllegalName: String=""
     @JvmField
     var whitelist = ConcurrentHashMap<String, Int>()
 }
