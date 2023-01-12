@@ -1,5 +1,6 @@
 package com.github.hsn8086.event
 
+import com.github.hsn8086.data.Config
 import com.github.hsn8086.data.Global
 import org.bukkit.Bukkit
 import org.bukkit.entity.Player
@@ -23,10 +24,10 @@ class JoinEvent : Listener {
         val isToManyConnect = checkIpBearerLimit(e, ipAddress)
 
         //检查ip是否过多玩家登录
-        if (Global.ipConnectCount[ipAddress]!! >= Global.playerCapPerIp!!
+        if (Global.ipConnectCount[ipAddress]!! >= Config.playerCapPerIp
             && isToManyConnect
         ) {
-            e.player.kickPlayer(Global.kickedForTooManyConnections)
+            e.player.kickPlayer(Config.kickedForTooManyConnections)
             Bukkit.banIP(ipAddress)
         }
 
@@ -34,7 +35,7 @@ class JoinEvent : Listener {
         val isNameIllegal = checkIfTheNameIsIllegal(player)
         if (isNameIllegal) {
             e.joinMessage = null
-            player.kickPlayer(Global.kickedForIllegalName)
+            player.kickPlayer(Config.kickedForIllegalName)
         }
 
         try {
@@ -46,7 +47,7 @@ class JoinEvent : Listener {
                 Global.canLogin.putIfAbsent(player.name, false)
             }
             if (!isNameIllegal && !isToManyConnect && !Global.canLogin[player.name]!!) {
-                Global.playerKickCount[player.name] = Global.computationalVerificationTimeout
+                Global.playerKickCount[player.name] = Config.computationalVerificationTimeout
                 //验证码
                 val resultString = getVerificationString(player)
                 sendQuestionMessage(player, resultString)
@@ -82,7 +83,7 @@ class JoinEvent : Listener {
             Global.ipConnectCount.putIfAbsent(ipAddress, 0)
 
             //如果连接计次大于最大连接数,则ban-ip
-            if (Global.ipConnectCount[ipAddress]!! >= Global.maximumConnectionsPerIp!!) {
+            if (Global.ipConnectCount[ipAddress]!! >= Config.maximumConnectionsPerIp) {
                 rtBool = true
             } else {
                 Global.tempPlayerList[e.player.name] = true
@@ -99,8 +100,8 @@ class JoinEvent : Listener {
     }
 
     private fun sendQuestionMessage(player: Player, resultString: StringBuilder) {
-        if (Global.computationalVerificationEnabled || Global.dotSayVerificationEnabled) {
-            player.sendMessage(Global.valueValidationChallengeText!!.replace("{question}", resultString.toString()))
+        if (Config.computationalVerificationEnabled || Config.dotSayVerificationEnabled) {
+            player.sendMessage(Config.valueValidationChallengeText.replace("{question}", resultString.toString()))
             Global.captchaString[player.name] = resultString.toString()
         }
     }
@@ -109,7 +110,7 @@ class JoinEvent : Listener {
         player: Player
     ): StringBuilder {
         var resultString = StringBuilder()
-        if (Global.computationalVerificationEnabled) {
+        if (Config.computationalVerificationEnabled) {
             val r = Random()
             val firstNumber = r.nextInt(5) + 1
             val secondNumber = r.nextInt(5) + 1

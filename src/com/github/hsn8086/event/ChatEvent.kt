@@ -1,5 +1,6 @@
 package com.github.hsn8086.event
 
+import com.github.hsn8086.data.Config
 import com.github.hsn8086.data.Global
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
@@ -13,13 +14,13 @@ class ChatEvent : Listener {
     @EventHandler
     fun onPlayerChat(e: AsyncPlayerChatEvent) {
         //检查是否启用聊天
-        if (Global.chatEnabled) {
+        if (Config.chatEnabled) {
             val player = e.player
             //检查是否为验证码,如果不是验证码，则检查是否为可登录状态
             Global.canLogin.putIfAbsent(player.name, false)
             if (e.message == Global.captcha[player.name].toString()) {
                 Global.canLogin[player.name] = true
-                player.sendMessage(Global.verificationSuccessPrompt)
+                player.sendMessage(Config.verificationSuccessPrompt)
                 e.isCancelled = true
                 Global.playerKickCount.remove(player.name)
             } else {
@@ -27,7 +28,7 @@ class ChatEvent : Listener {
                 if (!Global.canLogin[player.name]!!) {
                     Bukkit.getScheduler().runTask(Bukkit.getPluginManager().getPlugin("FAS")) {
                         player.kickPlayer(
-                            Global.unauthenticatedActionWarning
+                            Config.unauthenticatedActionWarning
                         )
                     }
                     e.isCancelled = true
@@ -40,7 +41,7 @@ class ChatEvent : Listener {
                     //检查发言频率
                     if (Global.spamCount[player.name]!! > -100) {
                         e.isCancelled = true
-                        player.sendMessage(Global.talkingTooMuchReminder)
+                        player.sendMessage(Config.talkingTooMuchReminder)
                     }
                     //检查发言是否过多
                     if (Global.spamCount[player.name]!! > 1000) {
@@ -48,27 +49,27 @@ class ChatEvent : Listener {
                         player.isBanned = true
                         Bukkit.getScheduler().runTask(Bukkit.getPluginManager().getPlugin("FAS")) {
                             player.kickPlayer(
-                                Global.talkingTooMuchReminder
+                                Config.talkingTooMuchReminder
                             )
                         }
                     }
                     //检查发言是否过长
-                    if (e.message.length > Global.maxMessageLength) {
+                    if (e.message.length > Config.maxMessageLength) {
                         e.isCancelled = true
-                        e.player.sendMessage(Global.messageTooLongWarning)
+                        e.player.sendMessage(Config.messageTooLongWarning)
                     }
                     //检查发言是否含有非法字符
-                    for (i in Global.bannedString!!.indices) {
-                        if (e.message.contains(Global.bannedString!![i])) {
+                    for (i in Config.bannedString!!.indices) {
+                        if (e.message.contains(Config.bannedString!![i])) {
                             e.isCancelled = true
-                            e.player.sendMessage(Global.bannedStringWarning)
+                            e.player.sendMessage(Config.bannedStringWarning)
                         }
                     }
                 }
             }
         } else {
             e.isCancelled = true
-            e.player.sendMessage(Global.chatDisabledWarning)
+            e.player.sendMessage(Config.chatDisabledWarning)
         }
     }
 }

@@ -1,5 +1,6 @@
 package com.github.hsn8086.event
 
+import com.github.hsn8086.data.Config
 import com.github.hsn8086.data.Global
 import org.bukkit.Bukkit
 import org.bukkit.event.EventHandler
@@ -22,7 +23,7 @@ class PingEvent : Listener {
                 a!!, b!!
             )
         }
-        if (Global.pingCount[ipAddress]!! > Global.maximumPingsPerSecond) {
+        if (Global.pingCount[ipAddress]!! > Config.maximumPingsPerSecond) {
             e.motd = ""
             try {
                 e.setServerIcon(Bukkit.loadServerIcon(BufferedImage(64, 64, 1)))

@@ -1,6 +1,7 @@
 package com.github.hsn8086
 
 
+import com.github.hsn8086.data.Config
 import com.github.hsn8086.data.Global
 import com.github.hsn8086.event.*
 import org.bukkit.Bukkit
@@ -21,7 +22,7 @@ class Main : JavaPlugin(), Listener {
     private fun stringProcess(str: String?): String {
         return str?.replace('&', ChatColor.COLOR_CHAR)?.replace("\\n", "\n")?.replace(
             "{prefix}",
-            Global.prefix!!
+            Config.prefix
         )
             ?: "null"
     }
@@ -54,7 +55,7 @@ class Main : JavaPlugin(), Listener {
                             Global.connectCountLock.unlock()
                         }
                         if (value == 2) {
-                            Bukkit.getPlayer(key).kickPlayer(Global.computeVerificationTimeout)
+                            Bukkit.getPlayer(key).kickPlayer(Config.computeVerificationTimeout)
                         }
                     }
                 }
@@ -65,40 +66,40 @@ class Main : JavaPlugin(), Listener {
     private val configVer1: Unit
         get() {
             loadConfig()
-            Global.computationalVerificationEnabled =
+            Config.computationalVerificationEnabled =
                 config.getBoolean("Verification.ComputationalVerification.Enabled")
-            Global.computationalVerificationTimeout = config.getInt("Verification.ComputationalVerification.Timeout")
-            Global.banMCStormFreePlanBot = config.getBoolean("Verification.BanMCStormFreePlanBot.Enabled")
-            Global.chatEnabled = config.getBoolean("Chat.Enabled")
-            Global.speakingInterval = config.getInt("Chat.SpeakingInterval")
-            Global.maxMessageLength = config.getInt("Chat.MaxMessageLength")
-            Global.canStoreTheNumberOfSpeeches = config.getInt("Chat.CanStoreTheNumberOfSpeeches")
-            Global.bannedString = config.getStringList("Chat.BannedString")
-            Global.maximumConnectionsPerIp = config.getInt("Network.MaximumConnectionsPerIp")
-            Global.playerCapPerIp = config.getInt("Network.PlayerCapPerIp")
-            Global.maximumPingsPerSecond = config.getInt("Network.MaximumPingsPerSecond")
-            Global.prefix = config.getString("Message.Prefix").replace('&', ChatColor.COLOR_CHAR).replace("\\n", "\n")
-            Global.underAttack = stringProcess(config.getString("Message.UnderAttack"))
-            Global.kickedForTooManyConnections = stringProcess(config.getString("Message.KickedForTooManyConnections"))
-            Global.kickedForCheck = stringProcess(config.getString("Message.KickedForCheck"))
-            Global.kickedForUnderAttack = stringProcess(config.getString("Message.KickedForUnderAttack")).replace(
+            Config.computationalVerificationTimeout = config.getInt("Verification.ComputationalVerification.Timeout")
+            Config.banMCStormFreePlanBot = config.getBoolean("Verification.BanMCStormFreePlanBot.Enabled")
+            Config.chatEnabled = config.getBoolean("Chat.Enabled")
+            Config.speakingInterval = config.getInt("Chat.SpeakingInterval")
+            Config.maxMessageLength = config.getInt("Chat.MaxMessageLength")
+            Config.canStoreTheNumberOfSpeeches = config.getInt("Chat.CanStoreTheNumberOfSpeeches")
+            Config.bannedString = config.getStringList("Chat.BannedString")
+            Config.maximumConnectionsPerIp = config.getInt("Network.MaximumConnectionsPerIp")
+            Config.playerCapPerIp = config.getInt("Network.PlayerCapPerIp")
+            Config.maximumPingsPerSecond = config.getInt("Network.MaximumPingsPerSecond")
+            Config.prefix = config.getString("Message.Prefix").replace('&', ChatColor.COLOR_CHAR).replace("\\n", "\n")
+            Config.underAttack = stringProcess(config.getString("Message.UnderAttack"))
+            Config.kickedForTooManyConnections = stringProcess(config.getString("Message.KickedForTooManyConnections"))
+            Config.kickedForCheck = stringProcess(config.getString("Message.KickedForCheck"))
+            Config.kickedForUnderAttack = stringProcess(config.getString("Message.KickedForUnderAttack")).replace(
                 "{underAttack}",
-                Global.underAttack!!
+                Config.underAttack
             )
-            Global.kickedForIllegalName = stringProcess(config.getString("Message.KickedForIllegalName"))
-            Global.valueValidationChallengeText =
+            Config.kickedForIllegalName = stringProcess(config.getString("Message.KickedForIllegalName"))
+            Config.valueValidationChallengeText =
                 stringProcess(config.getString("Message.ValueValidationChallengeText"))
-            Global.talkingTooMuchReminder = stringProcess(config.getString("Message.TalkingTooMuchReminder"))
-            Global.unauthenticatedActionWarning =
+            Config.talkingTooMuchReminder = stringProcess(config.getString("Message.TalkingTooMuchReminder"))
+            Config.unauthenticatedActionWarning =
                 stringProcess(config.getString("Message.UnauthenticatedActionWarning"))
-            Global.verificationSuccessPrompt = stringProcess(config.getString("Message.VerificationSuccessPrompt"))
-            Global.chatDisabledWarning = stringProcess(config.getString("Message.ChatDisabledWarning"))
-            Global.messageTooLongWarning = stringProcess(config.getString("Message.MessageTooLongWarning"))
-            Global.bannedStringWarning = stringProcess(config.getString("Message.BannedStringWarning"))
-            Global.computeVerificationFailed = stringProcess(config.getString("Message.ComputeVerificationFailed"))
-            Global.computeVerificationTimeout = stringProcess(config.getString("Message.ComputeVerificationTimeout"))
-            Global.whileListEnabled = config.getBoolean("Player.WhileList.Enabled")
-            Global.whitelistActivityThreshold = config.getInt("Player.Whitelist.ActivityThreshold")
-            Global.nameRegex = config.getString("Player.Name.Regex")
+            Config.verificationSuccessPrompt = stringProcess(config.getString("Message.VerificationSuccessPrompt"))
+            Config.chatDisabledWarning = stringProcess(config.getString("Message.ChatDisabledWarning"))
+            Config.messageTooLongWarning = stringProcess(config.getString("Message.MessageTooLongWarning"))
+            Config.bannedStringWarning = stringProcess(config.getString("Message.BannedStringWarning"))
+            Config.computeVerificationFailed = stringProcess(config.getString("Message.ComputeVerificationFailed"))
+            Config.computeVerificationTimeout = stringProcess(config.getString("Message.ComputeVerificationTimeout"))
+            Config.whileListEnabled = config.getBoolean("Player.WhileList.Enabled")
+            Config.whitelistActivityThreshold = config.getInt("Player.Whitelist.ActivityThreshold")
+            Config.nameRegex = config.getString("Player.Name.Regex")
         }
 }

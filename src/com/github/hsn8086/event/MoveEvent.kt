@@ -1,5 +1,6 @@
 package com.github.hsn8086.event
 
+import com.github.hsn8086.data.Config
 import com.github.hsn8086.data.Global
 import org.bukkit.event.EventHandler
 import org.bukkit.event.Listener
@@ -21,7 +22,7 @@ class MoveEvent : Listener {
                 )
             }
             //如果到达活跃度则白名单
-            if (Global.activity[e.player.name]!! >= Global.whitelistActivityThreshold) {
+            if (Global.activity[e.player.name]!! >= Config.whitelistActivityThreshold) {
                 Global.activity[e.player.name] = 0
                 Global.whitelist.merge(e.player.name, 1) { a: Int?, b: Int? ->
                     Integer.sum(
@@ -38,8 +39,8 @@ class MoveEvent : Listener {
 
         //增加发言机会
         Global.spamCount.putIfAbsent(player.name, 0)
-        if (Global.spamCount[player.name]!! > -(200 * Global.canStoreTheNumberOfSpeeches)) {
-            Global.spamCount.merge(player.name, -(200 / 20 / Global.speakingInterval)) { a: Int?, b: Int? ->
+        if (Global.spamCount[player.name]!! > -(200 * Config.canStoreTheNumberOfSpeeches)) {
+            Global.spamCount.merge(player.name, -(200 / 20 / Config.speakingInterval)) { a: Int?, b: Int? ->
                 Integer.sum(
                     a!!, b!!
                 )
@@ -55,7 +56,7 @@ class MoveEvent : Listener {
                 )
             }
             if (Global.loginTimeOutCount[player.name]!! > 400) {
-                player.kickPlayer(Global.unauthenticatedActionWarning)
+                player.kickPlayer(Config.unauthenticatedActionWarning)
             }
 
             //若未验证则限制玩家移动过
@@ -65,8 +66,8 @@ class MoveEvent : Listener {
             }
             player.sendMessage(
                 """
-    ${Global.unauthenticatedActionWarning}
-    ${Global.valueValidationChallengeText!!.replace("{question}", Global.captchaString[player.name]!!)}
+    ${Config.unauthenticatedActionWarning}
+    ${Config.valueValidationChallengeText.replace("{question}", Global.captchaString[player.name]!!)}
     """.trimIndent()
             )
         }
