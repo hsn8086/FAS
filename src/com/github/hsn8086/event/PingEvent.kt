@@ -18,9 +18,9 @@ class PingEvent : Listener {
     fun onPing(e: ServerListPingEvent) {
         val ipAddress =
             e.address.toString().split(":".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()[0].replace("/", "")
-        Global.pingCount.merge(ipAddress, 1) { a: Int?, b: Int? ->
+        Global.pingCount.merge(ipAddress, 1) { a: Int, b: Int ->
             Integer.sum(
-                a!!, b!!
+                a, b
             )
         }
         if (Global.pingCount[ipAddress]!! > Config.maximumPingsPerSecond) {
