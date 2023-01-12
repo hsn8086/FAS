@@ -1,5 +1,5 @@
 # FAS
-
+A anti-attack and anti-spam plugin
 ## Introduce
 
 This project was previously written, was used for low version of the bot attack defense, but because our 1.5.2 Minecraft
@@ -13,9 +13,9 @@ Can be used for defense:
 
 - Fast/slow/bypass bot attacks (single ip)
 - Distributed bot attacks
-- motd attack
+- Motd attack
 - Play normally while being attacked
-
+- Spam
 ## Performance indicators:
 
 The following test results are derived under 1.8.8 and E5 (the specific generation I forget, probably E5-2470, probably
