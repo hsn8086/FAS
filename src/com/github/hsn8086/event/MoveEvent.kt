@@ -16,17 +16,17 @@ class MoveEvent : Listener {
         try {
             
             //增加活跃度
-            Global.activity.merge(e.player.name, 1) { a: Int?, b: Int? ->
+            Global.activity.merge(e.player.name, 1) { a: Int, b: Int ->
                 Integer.sum(
-                    a!!, b!!
+                    a, b
                 )
             }
             //如果到达活跃度则白名单
             if (Global.activity[e.player.name]!! >= Config.whitelistActivityThreshold) {
                 Global.activity[e.player.name] = 0
-                Global.whitelist.merge(e.player.name, 1) { a: Int?, b: Int? ->
+                Global.whitelist.merge(e.player.name, 1) { a: Int, b: Int ->
                     Integer.sum(
-                        a!!, b!!
+                        a, b
                     )
                 }
             }
