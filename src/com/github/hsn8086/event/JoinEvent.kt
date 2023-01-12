@@ -28,6 +28,7 @@ class JoinEvent : Listener {
             && isToManyConnect
         ) {
             e.player.kickPlayer(Config.kickedForTooManyConnections)
+            e.joinMessage = ""
             Bukkit.banIP(ipAddress)
         }
 
@@ -36,6 +37,7 @@ class JoinEvent : Listener {
         if (isNameIllegal) {
             e.joinMessage = null
             player.kickPlayer(Config.kickedForIllegalName)
+            e.joinMessage = ""
         }
 
         try {
