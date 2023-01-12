@@ -1,6 +1,6 @@
 name: FAS
 main: com.github.hsn8086.Main
-version: 0.4.0-SNAPSHOT
+version: 0.4.0
 author: hsn
 depend: [ Kotlin ]
 load: STARTUP
