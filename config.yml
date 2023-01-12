@@ -1,50 +1,62 @@
 #---Config---
-Config.Version: 1
+Config:
+  Version: 1
 
 #---verification---
-Verification.ComputationalVerification.Enabled: true
-Verification.ComputationalVerification.Timeout: 15
-Verification.BanMCStormFreePlanBot.Enabled: true
+Verification:
+  ComputationalVerification:
+    Enabled: true
+    Timeout: 15
+  BanMCStormFreePlanBot:
+    Enabled: true
 
 #---Chat---
-Chat.Enabled: true
-Chat.SpeakingInterval: 3
-Chat.MaxMessageLength: 100
-Chat.CanStoreTheNumberOfSpeeches: 20
-Chat.BannedString:
-  - '\n'
+Chat:
+  Enabled: true
+  SpeakingInterval: 3
+  MaxMessageLength: 100
+  CanStoreTheNumberOfSpeeches: 20
+  BannedString:
+    - '\n'
 
-Chat.DuplicateMessageDetection.Enabled: true
-#I don't know if this is the correct way to write it, but I didn't find a better word. :(
-Chat.DuplicateMessageDetection.TextPrint.Enabled: true
-Chat.DuplicateMessageDetection.TextPrint.Similarity: 0.9
+  DuplicateMessageDetection:
+    Enabled: true
+    #I don't know if this is the correct way to write it, but I didn't find a better word. :(
+    TextPrint:
+      Enabled: true
+      Similarity: 0.9
 
 #---Network---
-Network.Host: '127.0.0.1'
-Network.MaximumConnectionsPerIp: 5
-Network.PlayerCapPerIp: 10
-Network.MaximumPingsPerSecond: 3
+Network:
+  Host: '127.0.0.1'
+  MaximumConnectionsPerIp: 5
+  PlayerCapPerIp: 10
+  MaximumPingsPerSecond: 3
 
 
 #---Player---
-Player.WhileList.Enabled: true
-Player.Whitelist.ActivityThreshold: 1000
-Player.Name.Regex: '^[a-zA-Z0-9_]{1,16}$'
+Player:
+  WhileList:
+    Enabled: true
+    ActivityThreshold: 1000
+  Name:
+    Regex: '^[a-zA-Z0-9_]{1,16}$'
 
 
 #---Message---
-Message.Prefix: '&f[FAS]'
-Message.KickedForTooManyConnections: '{prefix}&4Your IP has reached the maximum number of connections.'
-Message.KickedForCheck: '{prefix}&a\n------------\nAnalyzing your connection\nPlease login again\n------------'
-Message.KickedForUnderAttack: '{underAttack} please wait'
-Message.KickedForIllegalName: '&cYour name does not match \"^[a-zA-Z0-9_]{3,16}\$\", please change your name'
-Message.UnderAttack: '{prefix}&4Server is attacked.'
-Message.ValueValidationChallengeText: '{prefix}&l&aPlease answer the following questions:\n{question}\nto remove the restriction.'
-Message.TalkingTooMuchReminder: '{prefix}&4Excessive speech.'
-Message.UnauthenticatedActionWarning: '{prefix}&l&aCannot operate without verification!'
-Message.VerificationSuccessPrompt: '{prefix}&l&aYou are now verified.'
-Message.ChatDisabledWarning: '{prefix}&4Chat is not enabled.'
-Message.MessageTooLongWarning: '{prefix}&4Message is too long.'
-Message.BannedStringWarning: '{prefix}&4You are not allowed to use this string.'
-Message.ComputeVerificationFailed: '{prefix}&4Failed to verify.'
-Message.ComputeVerificationTimeout: '{prefix}&4Verification timeout.'
+Message:
+  Prefix: '&f[FAS]'
+  KickedForTooManyConnections: '{prefix}&4Your IP has reached the maximum number of connections.'
+  KickedForCheck: '{prefix}&a\n------------\nAnalyzing your connection\nPlease login again\n------------'
+  KickedForUnderAttack: '{underAttack} please wait'
+  KickedForIllegalName: '&cYour name does not match \"^[a-zA-Z0-9_]{3,16}\$\", please change your name'
+  UnderAttack: '{prefix}&4Server is attacked.'
+  ValueValidationChallengeText: '{prefix}&l&aPlease answer the following questions:\n{question}\nto remove the restriction.'
+  TalkingTooMuchReminder: '{prefix}&4Excessive speech.'
+  UnauthenticatedActionWarning: '{prefix}&l&aCannot operate without verification!'
+  VerificationSuccessPrompt: '{prefix}&l&aYou are now verified.'
+  ChatDisabledWarning: '{prefix}&4Chat is not enabled.'
+  MessageTooLongWarning: '{prefix}&4Message is too long.'
+  BannedStringWarning: '{prefix}&4You are not allowed to use this string.'
+  ComputeVerificationFailed: '{prefix}&4Failed to verify.'
+  ComputeVerificationTimeout: '{prefix}&4Verification timeout.'
