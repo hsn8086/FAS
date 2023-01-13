@@ -68,7 +68,7 @@ class Main : JavaPlugin(), Listener {
     private val configVer1: Unit
         get() {
             loadConfig()
-
+            Config.mode=config.getString("Config.Mode")
             Config.computationalVerificationEnabled =
                 config.getBoolean("Verification.ComputationalVerification.Enabled")
             Config.computationalVerificationTimeout = config.getInt("Verification.ComputationalVerification.Timeout")

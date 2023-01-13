@@ -47,7 +47,9 @@ class ChatEvent : Listener {
                     //检查发言是否过多
                     if (Global.spamCount[player.name]!! > 1000) {
                         e.isCancelled = true
-                        player.isBanned = true
+                        if (Config.mode == "ban") {
+                            player.isBanned = true
+                        }
                         Bukkit.getScheduler().runTask(Bukkit.getPluginManager().getPlugin("FAS")) {
                             player.kickPlayer(
                                 Config.talkingTooMuchReminder
