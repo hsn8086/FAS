@@ -4,7 +4,7 @@
 
 A anti-attack and anti-spam plugin
 
-Note: Since only BukkitAPI is used, it is not possible to achieve perfect defense, but the server version can be 1.5 or
+Note: Since only BukkitAPI is used, it is not possible to achieve perfect defense, but the server version can be 1.5 or even
 the latest version.
 
 ## Introduce
