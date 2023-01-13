@@ -62,10 +62,7 @@ class CommandEvent : Listener {
                             )
                         }
                     }
-
-
                 }
-
             }
         }
     }

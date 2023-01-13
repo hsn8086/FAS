@@ -68,7 +68,7 @@ class Main : JavaPlugin(), Listener {
     private val configVer1: Unit
         get() {
             loadConfig()
-            Config.mode=config.getString("Config.Mode")
+            Config.mode = config.getString("Config.Mode")
             Config.computationalVerificationEnabled =
                 config.getBoolean("Verification.ComputationalVerification.Enabled")
             Config.computationalVerificationTimeout = config.getInt("Verification.ComputationalVerification.Timeout")
@@ -78,8 +78,8 @@ class Main : JavaPlugin(), Listener {
             Config.maxMessageLength = config.getInt("Chat.MaxMessageLength")
             Config.canStoreTheNumberOfSpeeches = config.getInt("Chat.CanStoreTheNumberOfSpeeches")
             Config.bannedString = config.getStringList("Chat.BannedString")
-            Config.antiCommand=config.getBoolean("Chat.AntiCommand.Enabled")
-            Config.commandWhiteList=config.getStringList("Chat.AntiCommand.CommandWhiteList")
+            Config.antiCommand = config.getBoolean("Chat.AntiCommand.Enabled")
+            Config.commandWhiteList = config.getStringList("Chat.AntiCommand.CommandWhiteList")
             Config.maximumConnectionsPerIp = config.getInt("Network.MaximumConnectionsPerIp")
             Config.playerCapPerIp = config.getInt("Network.PlayerCapPerIp")
             Config.maximumPingsPerSecond = config.getInt("Network.MaximumPingsPerSecond")

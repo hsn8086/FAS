@@ -15,7 +15,7 @@ class MoveEvent : Listener {
     @EventHandler
     fun onPlayerMove(e: PlayerMoveEvent) {
         try {
-            
+
             //增加活跃度
             Global.activity.merge(e.player.name, 1) { a: Int, b: Int ->
                 Integer.sum(
@@ -34,7 +34,7 @@ class MoveEvent : Listener {
         } catch (ex: Exception) {
             ex.printStackTrace()
         } finally {
-            
+
         }
         val player = e.player
 

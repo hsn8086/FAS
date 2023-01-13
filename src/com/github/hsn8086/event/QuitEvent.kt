@@ -14,7 +14,7 @@ class QuitEvent : Listener {
     @EventHandler
     fun onQuit(e: PlayerQuitEvent) {
         try {
-            
+
             ifTimeOutSetMsgNull(e)
             Global.playerKickCount.remove(e.player.name)
             Global.loginTimeOutCount.remove(e.player.name)
@@ -25,7 +25,7 @@ class QuitEvent : Listener {
         } catch (ex: Exception) {
             ex.printStackTrace()
         } finally {
-            
+
         }
     }
 

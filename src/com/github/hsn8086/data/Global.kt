@@ -35,8 +35,6 @@ object Global {
     var canLogin = ConcurrentHashMap<String, Boolean>()
 
 
-
-
     @JvmField
     var connectCount = 0
 
@@ -44,12 +42,8 @@ object Global {
     var connectCountLock: Lock = ReentrantLock()
 
 
-
-
     @JvmField
     var activity = ConcurrentHashMap<String, Int>()
-
-
 
 
     @JvmField

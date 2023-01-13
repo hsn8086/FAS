@@ -27,6 +27,7 @@ Chat:
     TextPrint:
       Enabled: true
       Similarity: 0.9
+
   AntiCommand:
     Enabled: true
     CommandWhiteList:
