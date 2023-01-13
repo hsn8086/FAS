@@ -16,8 +16,11 @@ Can be used for defense:
 - Motd attack
 - Play normally while being attacked
 - Spam
+## Performance indicators(0.4.1):
+### 5000bot/s attack
+- 1Core 2G 5m lagging but not crashing!!!(AMD EPYC 7K62 2.6GHz)
 
-## Performance indicators:
+## Performance indicators(Under 0.4.0):
 
 The following test results are derived under 1.8.8 and E5 (the specific generation I forget, probably E5-2470, probably
 3.1-3.3ghz)
@@ -31,7 +34,7 @@ The following test results are derived under 1.8.8 and E5 (the specific generati
 ### 5000bot/s attack
 
 - 1Core 2G disaster(server crash)
-- 4Core 8G Last ten seconds of the attack lagged (total 30s)
+- 4Core 8G last ten seconds of the attack lagged (total 30s)
 
 ### 2000connect/s motd attack
 
