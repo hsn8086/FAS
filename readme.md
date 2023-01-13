@@ -12,6 +12,10 @@ the latest version.
 This project was previously written, was used for low version of the bot attack defense, but because our 1.5.2 Minecraft
 server is not open, and then only a few small updates.
 
+## Dependencies
+
+- [KotlinMC](https://www.spigotmc.org/resources/kotlinmc.82237/)
+
 ## Feature
 
 Can be used for defense:

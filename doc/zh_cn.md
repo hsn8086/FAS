@@ -8,6 +8,10 @@
 
 这个项目是以前写的,是用于低版本的bot攻击防御,但由于我们的1.5.2 Minecraft服务器关闭,后来只有一些小的更新.
 
+## 依赖
+
+- [KotlinMC](https://www.spigotmc.org/resources/kotlinmc.82237/)
+
 ## 特点
 
 可用于防御:
