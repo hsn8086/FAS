@@ -19,11 +19,12 @@ Can be used for defense:
 - Play normally while being attacked
 - Spam
 
-## Performance indicators(0.4.1):
+## Performance indicators(0.4.2):
 
 ### 5000bot/s attack
 
-- 1Core 2G 5m lagging but not crashing!!!(AMD EPYC 7K62 2.6GHz)
+- 1Core 2G 5m lag but not crashing!!!(AMD EPYC 7K62 2.6GHz)
+- 2Core 4G 20m Tolerable lag(Intel Platinum 8374C IceLake 2.7/3.3GHz)
 
 ## Performance indicators(Under 0.4.0):
 
@@ -32,7 +33,7 @@ The following test results are derived under 1.8.8 and E5 (the specific generati
 
 ### 1000bot/s attack
 
-- 1Core 2G lagging
+- 1Core 2G lag
 - 3Core 6G smooth
 - 4Core 8G Smooth
 
