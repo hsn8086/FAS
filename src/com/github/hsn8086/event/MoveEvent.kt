@@ -41,9 +41,9 @@ class MoveEvent : Listener {
         //增加发言机会
         Global.spamCount.putIfAbsent(player.name, 0)
         if (Global.spamCount[player.name]!! > -(200 * Config.canStoreTheNumberOfSpeeches)) {
-            Global.spamCount.merge(player.name, -(200 / 20 / Config.speakingInterval)) { a: Int?, b: Int? ->
+            Global.spamCount.merge(player.name, -(200 / 20 / Config.speakingInterval)) { a: Int, b: Int ->
                 Integer.sum(
-                    a!!, b!!
+                    a, b
                 )
             }
         }
@@ -51,9 +51,9 @@ class MoveEvent : Listener {
         Global.canLogin.putIfAbsent(player.name, false)
         if (!Global.canLogin[player.name]!!) {
             Global.loginTimeOutCount.putIfAbsent(player.name, 0)
-            Global.loginTimeOutCount.merge(player.name, 1) { a: Int?, b: Int? ->
+            Global.loginTimeOutCount.merge(player.name, 1) { a: Int, b: Int ->
                 Integer.sum(
-                    a!!, b!!
+                    a, b
                 )
             }
             if (Global.loginTimeOutCount[player.name]!! > 400) {

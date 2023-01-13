@@ -9,7 +9,7 @@ import org.bukkit.event.player.AsyncPlayerChatEvent
 
 /**
  * @author hsn
- * @version 4.0
+ * @version 4.1
  */
 class ChatEvent : Listener {
     @EventHandler
@@ -34,9 +34,9 @@ class ChatEvent : Listener {
                     }
                     e.isCancelled = true
                 } else {
-                    Global.spamCount.merge(player.name, 200) { a: Int?, b: Int? ->
+                    Global.spamCount.merge(player.name, 200) { a: Int, b: Int ->
                         Integer.sum(
-                            a!!, b!!
+                            a, b
                         )
                     }
                     //¼ì²é·¢ÑÔÆµÂÊ

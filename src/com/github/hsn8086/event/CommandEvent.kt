@@ -9,7 +9,7 @@ import org.bukkit.event.player.PlayerCommandPreprocessEvent
 
 /**
  * @author hsn
- * @version 4.0
+ * @version 4.1
  */
 class CommandEvent : Listener {
     @EventHandler

@@ -29,9 +29,9 @@ class LoginEvent : Listener {
         //检测玩家是否在白名单内
         if (Global.whitelist[e.name]!! >= 1 && Config.whileListEnabled) {
             //减少一次玩家的豁免权
-            Global.whitelist.merge(e.name, -1) { a: Int?, b: Int? ->
+            Global.whitelist.merge(e.name, -1) { a: Int, b: Int ->
                 Integer.sum(
-                    a!!, b!!
+                    a, b
                 )
             }
 

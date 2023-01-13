@@ -20,12 +20,11 @@ class Main : JavaPlugin(), Listener {
         saveDefaultConfig()
     }
 
-    private fun stringProcess(str: String?): String {
-        return str?.replace('&', ChatColor.COLOR_CHAR)?.replace("\\n", "\n")?.replace(
+    private fun stringProcess(str: String): String {
+        return str.replace('&', ChatColor.COLOR_CHAR).replace("\\n", "\n").replace(
             "{prefix}",
             Config.prefix
         )
-            ?: "null"
     }
 
     override fun onEnable() {
