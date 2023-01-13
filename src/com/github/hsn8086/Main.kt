@@ -42,7 +42,13 @@ class Main : JavaPlugin(), Listener {
                 try {
                     Global.connectCountLock.lock()
                     if (Global.connectCount > -10) {
-                        Global.connectCount -= (server.onlinePlayers.size + 8) / 4
+
+                        if (Util.isMC5() || Util.isMC6()|| Util.isMC7()) {
+                            Global.connectCount -= (server.maxPlayers / 4 + 8) / 4
+                        } else {
+                            Global.connectCount -= (server.onlinePlayers.size + 8) / 4
+                        }
+
                     }
                 } finally {
                     Global.connectCountLock.unlock()

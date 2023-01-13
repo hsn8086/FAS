@@ -1,5 +1,6 @@
 package com.github.hsn8086.event
 
+import com.github.hsn8086.Util
 import com.github.hsn8086.data.Config
 import com.github.hsn8086.data.Global
 import org.bukkit.Bukkit
@@ -26,7 +27,10 @@ class PingEvent : Listener {
         if (Global.pingCount[ipAddress]!! > Config.maximumPingsPerSecond) {
             e.motd = ""
             try {
-                e.setServerIcon(Bukkit.loadServerIcon(BufferedImage(64, 64, 1)))
+                if (!Util.isMC5() && !Util.isMC6()&& !Util.isMC7()) {
+                    e.setServerIcon(Bukkit.loadServerIcon(BufferedImage(64, 64, 1)))
+                }
+
             } catch (exception: Exception) {
                 Bukkit.getLogger().warning(exception.toString())
             }
