@@ -1,8 +1,11 @@
 # FAS
 
-lang: [Chinese](doc/zh_cn.md)|English
+[Chinese](doc/zh_cn.md) | English
 
 A anti-attack and anti-spam plugin
+
+Note: Since only BukkitAPI is used, it is not possible to achieve perfect defense, but the server version can be 1.5 or
+the latest version.
 
 ## Introduce
 
