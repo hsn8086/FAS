@@ -1,6 +1,8 @@
 #---Config---
 Config:
   Version: 1
+  # (kick/ban)
+  Mode: 'kick'
 
 #---verification---
 Verification:
@@ -25,6 +27,13 @@ Chat:
     TextPrint:
       Enabled: true
       Similarity: 0.9
+  AntiCommand:
+    Enabled: true
+    CommandWhiteList:
+      - '/l'
+      - '/login'
+      - '/reg'
+      - '/register'
 
 #---Network---
 Network:

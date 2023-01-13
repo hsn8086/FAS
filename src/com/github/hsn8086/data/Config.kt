@@ -6,6 +6,8 @@ package com.github.hsn8086.data
  * @version 1.0
  */
 object Config {
+    var commandWhiteList: MutableList<String>? = null
+    var antiCommand: Boolean = false
     var maximumConnectionsPerIp: Int = 0
     var kickedForTooManyConnections: String = ""
 
