@@ -1,5 +1,7 @@
 # FAS
 
+lang: [Chinese](doc/zh_cn.md)|English
+
 A anti-attack and anti-spam plugin
 
 ## Introduce
@@ -16,8 +18,11 @@ Can be used for defense:
 - Motd attack
 - Play normally while being attacked
 - Spam
+
 ## Performance indicators(0.4.1):
+
 ### 5000bot/s attack
+
 - 1Core 2G 5m lagging but not crashing!!!(AMD EPYC 7K62 2.6GHz)
 
 ## Performance indicators(Under 0.4.0):
